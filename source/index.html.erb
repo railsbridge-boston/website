@@ -1,10 +1,51 @@
 ---
-title: Welcome to Middleman
+title: RailsBridge Boston - Ruby and Rails workshop
 ---
 
-<div class="welcome">
-  <h1>Middleman is Watching</h1>
-  <p class="doc">
-    <%= link_to "Read Online Documentation", "http://middlemanapp.com/" %>
-  </p><!-- .doc -->
-</div><!-- .welcome -->
+<header class="header">
+  <%= link_to "Menu", "#!", :class => "nav-toggle" %>
+</header>
+<%= partial "nav" %>
+
+<section class="hero">
+  <div class="boston">
+    <%= image_tag "rubygem@2x.png", :class => "gem" %>
+  </div>
+  <h1 class="title">RailsBridge <span>Boston</span></h1>
+  <%= link_to "Register for the workshop", "http://railsbridge-boston-may-2014.eventbrite.com/", :class => "register-link" %>
+</section>
+
+<section class="next-workshop">
+  <h2 class="section-title">Next workshop</h2>
+  <h2 class="workshop-title dummy">Name of next workshop</h2>
+  <p class="workshop-date dummy">January 1 &ndash; 2, 2014</p>
+  <p class="workshop-description dummy">This is the sequel to our January Ruby workshop. We'll pick up where we left off, and introduce the Rails half of Ruby on Rails.</p>
+  <%= link_to "Register for the workshop", "http://railsbridge-boston-may-2014.eventbrite.com/", :class => "register-link button" %>
+</section>
+
+<section class="mailing-list">
+  <h2 class="section-title">Stay in the loop</h2>
+
+  <p>Want to know about new upcoming workshops? Sign up for our announcement list and we’ll keep you updated!</p>
+
+  <form class="mail-signup dummy">
+    <label for="signup">Enter your email</label>
+    <input type="text" id="signup" placeholder="Email address" />
+    <input type="submit" value="Get updates" />
+  </form>
+</section>
+
+<section class="summary">
+  <div class="text">
+    <h2 class="section-title">What is it?</h2>
+    <p>The RailsBridge Workshop is a free 1.5 day guided introduction to programming in
+    <%= link_to "Ruby", "http://ruby-lang.org/" %>
+    and
+    <%= link_to "Ruby on Rails", "http://rubyonrails.org/" %>.
+    Read our
+    <%= link_to "workshop recaps", "http://railsbridgeboston.tumblr.com/tagged/recap" %>
+    to see what our workshops are like.</p>
+
+    <%= link_to "Learn more about us", "/about.html", :class => "to-about" %>
+  </div>
+</section>

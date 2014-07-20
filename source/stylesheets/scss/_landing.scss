@@ -1,0 +1,107 @@
+.landing {
+  .nav {
+    @include media($medium-screen) {
+      @include outer-container;
+      border-bottom: $light-blue-border;
+    }
+
+    .home {
+      display: none;
+    }
+  }
+}
+
+.hero {
+  @include background-image(radial-gradient(circle at 50% 114%, lighten($blue, 10) 21%, $blue 80%));
+  padding: 2em $side-padding 3em;
+  text-align: center;
+
+  .boston {
+    background: url('/images/boston.png') no-repeat center top;
+    background-size: 100%;
+    margin-bottom: 1em;
+    padding: 3em 0 1em 0;
+
+    @include media($medium-screen) {
+      background-image: url('/images/boston_@2x.png');
+      background-size: auto;
+    }
+
+    .gem {
+      display: block;
+      margin: 0 auto;
+      max-width: 5em;
+    }
+  }
+
+  .title {
+    color: $blue-light;
+    font-size: $large-font-size;
+    letter-spacing: 5px;
+    text-shadow: $text-shadow;
+    text-transform: uppercase;
+
+    span {
+      color: $white;
+      display: block;
+      font-family: $serif;
+      font-size: em(40);
+      margin-top: 1rem;
+    }
+  }
+
+  .register-link {
+    @extend %link-callout;
+    color: $yellow;
+
+    &:after {
+      content: "\BB";
+      margin-left: .35em;
+    }
+  }
+}
+
+.workshop-title {
+  font-family: $serif;
+  font-weight: $base-font-weight;
+}
+
+.workshop-date {
+  color: $gray-light;
+  font-family: $sans-serif;
+  font-size: $small-font-size;
+  font-weight: $bold-font-weight;
+}
+
+.workshop-description {
+  margin-top: 1em;
+}
+
+.mailing-list {
+  label {
+    color: $gray-light;
+  }
+
+  input[type="submit"] {
+    background-color: $form-border-color;
+
+    &:hover {
+      background-color: darken($form-border-color, 5);
+    }
+  }
+}
+
+.summary {
+  background: url('/images/reflection.png') repeat-x center -10px $gray-light;
+  background-size: auto;
+  margin-top: 2em;
+
+  .section-title {
+    color: $white;
+    margin-top: 1em;
+  }
+
+  .to-about {
+    @extend %link-callout;
+  }
+}

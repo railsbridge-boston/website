@@ -1,0 +1,23 @@
+html, body {
+  @include size(100%);
+}
+
+section {
+  padding: 3em $side-padding;
+}
+
+.button {
+  @extend %button;
+}
+
+.caption {
+  color: $gray-light;
+  font-size: $small-font-size;
+}
+
+.section-title {
+  color: $gray-light;
+  font-weight: $thin-font-weight;
+  margin-bottom: 1em;
+  text-transform: uppercase;
+}

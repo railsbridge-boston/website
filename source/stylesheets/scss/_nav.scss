@@ -1,0 +1,54 @@
+.header {
+  @include clearfix;
+  background: $blue;
+  border: $light-blue-border;
+  position: relative;
+  z-index: $z-header;
+}
+
+.nav-toggle {
+  @extend %nav-links;
+  display: block;
+  float: right;
+  font-size: $small-font-size;
+  font-weight: $bold-font-weight;
+  padding: 1rem 1rem;
+  text-transform: uppercase;
+}
+
+.nav {
+  @include size(100% 0%);
+  @include position(absolute, 0px null null null);
+  @include transition(all .25s linear);
+  background: $blue;
+  overflow: hidden;
+  z-index: $z-nav;
+
+  &.is-open {
+    @include size(100%);
+  }
+
+  a {
+    @extend %nav-links;
+  }
+
+  .pages {
+    @extend %vertical-align;
+    margin: 0 auto;
+    max-width: 20em;
+
+    li {
+      border-bottom: $light-blue-border;
+
+      &:last-of-type {
+        border: 0;
+      }
+
+      a {
+        display: block;
+        padding: 1.5em 1em;
+        text-align: center;
+      }
+    }
+  }
+}
