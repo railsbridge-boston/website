@@ -1,36 +1,105 @@
 .landing {
+  .header {
+    @include media($medium-screen) {
+      display: none;
+    }
+  }
+
   .nav {
     @include media($medium-screen) {
       @include outer-container;
-      border-bottom: $light-blue-border;
+      @include size(100% auto);
+      background: transparent;
+      left: 0;
+      margin: 0 auto;
+      overflow: visible;
+      right: 0;
     }
 
     .home {
       display: none;
     }
   }
+
+  .pages {
+    @include media($medium-screen) {
+      @include shift(1);
+      @include span-columns(10);
+      @include transform(translateY(0));
+      border-bottom: $light-blue-border;
+      top: 0;
+      max-width: inherit;
+    }
+
+    &:after {
+      @include media($medium-screen) {
+        @include position(absolute, 2.85em 0px null 0px);
+        @include size(2.5em 3.5em);
+        background: url("/images/train.png") center center no-repeat;
+        background-size: auto 100%;
+        content: "";
+        display: block;
+        margin: auto;
+      }
+    }
+
+    li {
+      @include media($medium-screen) {
+        @include span-columns(2 of 8);
+        border: 0;
+        display: inline-block;
+
+        &.blog, &.curriculum {
+          a {
+            text-align: right;
+          }
+        }
+      }
+
+      a {
+        font-weight: $base-font-weight;
+
+        @include media($medium-screen) {
+          text-align: left;
+        }
+      }
+    }
+  }
 }
 
 .hero {
   @include background-image(radial-gradient(circle at 50% 114%, lighten($blue, 10) 21%, $blue 80%));
-  padding: 2em $side-padding 3em;
+  padding: 3em $side-padding;
   text-align: center;
 
+  @include media($medium-screen) {
+    padding: 6em $side-padding 4em;
+  }
+
   .boston {
-    background: url('/images/boston.png') no-repeat center top;
+    background: url("/images/boston.png") no-repeat center top;
     background-size: 100%;
     margin-bottom: 1em;
-    padding: 3em 0 1em 0;
+    padding: 20% 0 1em 0;
+    position: relative;
 
     @include media($medium-screen) {
-      background-image: url('/images/boston_@2x.png');
-      background-size: auto;
+      @include outer-container;
+      background-image: url("/images/boston_2x.png");
+      background-position: center center;
+      background-size: 90%;
+      padding: 9em 0 15% 0;
     }
 
     .gem {
       display: block;
       margin: 0 auto;
       max-width: 5em;
+
+      @include media($medium-screen) {
+        @include position(absolute, 40% 0px null 0px);
+        max-width: 7em;
+      }
     }
   }
 
@@ -41,18 +110,33 @@
     text-shadow: $text-shadow;
     text-transform: uppercase;
 
+    @include media($medium-screen) {
+      font-size: 2em;
+      margin-top: -5%;
+      position: relative;
+      z-index: $z-rbb-title;
+    }
+
     span {
       color: $white;
       display: block;
       font-family: $serif;
       font-size: em(40);
       margin-top: 1rem;
+
+      @include media($medium-screen) {
+        margin-top: .35em;
+      }
     }
   }
 
   .register-link {
     @extend %link-callout;
     color: $yellow;
+
+    &:hover {
+      color: lighten($yellow, 15);
+    }
 
     &:after {
       content: "\BB";
@@ -61,47 +145,174 @@
   }
 }
 
-.workshop-title {
-  font-family: $serif;
-  font-weight: $base-font-weight;
+.actionable-sections {
+  padding: 0 $side-padding;
+
+  @include media($medium-screen) {
+    @include clearfix;
+    @include outer-container;
+    position: relative;
+  }
+
+  &:before {
+    @include media($medium-screen) {
+      @include position(absolute, null 0 null 0);
+      @include size(1px 100%);
+      background-color: $base-border-color;
+      content: "";
+      display: block;
+      margin: auto;
+    }
+  }
+
+  section {
+    @include media($medium-screen) {
+      padding-bottom: 5em;
+      padding-top: 5em;
+    }
+  }
 }
 
-.workshop-date {
-  color: $gray-light;
-  font-family: $sans-serif;
-  font-size: $small-font-size;
-  font-weight: $bold-font-weight;
-}
+.next-workshop {
+  @include media($medium-screen) {
+    @include span-columns(5);
+  }
 
-.workshop-description {
-  margin-top: 1em;
+  .workshop-title {
+    font-family: $serif;
+    font-weight: $base-font-weight;
+  }
+
+  .workshop-date {
+    color: $gray-light;
+    font-family: $sans-serif;
+    font-size: $small-font-size;
+    font-weight: $bold-font-weight;
+  }
+
+  .workshop-description {
+    margin-top: 1em;
+  }
 }
 
 .mailing-list {
+  @include media($medium-screen) {
+    @include shift(2);
+    @include span-columns(5);
+  }
+
   label {
     color: $gray-light;
   }
 
   input[type="submit"] {
-    background-color: $form-border-color;
+    $submit-color: $gray;
+    background-color: $submit-color;
+    border-bottom: 2px darken($submit-color, 8) solid;
 
     &:hover {
-      background-color: darken($form-border-color, 5);
+      background-color: darken($submit-color, 8);
     }
   }
 }
 
 .summary {
-  background: url('/images/reflection.png') repeat-x center -10px $gray-light;
-  background-size: auto;
-  margin-top: 2em;
+  background-color: $gray-light;
+  background-image: url("/images/reflection.png"),
+                    url("/images/workshop.png");
+  background-position: center -10px, right bottom;
+  background-repeat: repeat-x, no-repeat;
+  background-size: auto, cover;
 
-  .section-title {
-    color: $white;
-    margin-top: 1em;
+  @include media($medium-screen) {
+    background-image: url("/images/reflection_2x.png"),
+                      url("/images/workshop_2x.png");
+    background-position: center -10px, center 25%;
+    background-size: 70%, cover;
   }
 
-  .to-about {
-    @extend %link-callout;
+  .wrap {
+    padding: 1em inherit;
+
+    @include media($medium-screen) {
+      @include outer-container;
+      padding: 5em inherit 1em;
+    }
+  }
+
+  .text {
+    margin-bottom: 3em;
+
+    @include media($medium-screen) {
+      @include span-columns(5);
+    }
+
+    .section-title {
+      color: $white;
+      margin-top: 1em;
+    }
+
+    .to-about {
+      @extend %link-callout;
+    }
+  }
+
+  .media {
+    @include media($medium-screen) {
+      @include shift(1);
+      @include span-columns(6);
+    }
+
+    .video {
+      @include size(100% 15em);
+      border: 2px $base-border-color solid;
+      border-radius: $base-border-radius;
+      overflow: hidden;
+      position: relative;
+
+      @include media($medium-screen) {
+        height: 20em;
+      }
+
+      &:after {
+        @include position(absolute, 0 0 0 0);
+        @include size(6em);
+        @include transition;
+        background: url("/images/play.png") 56% 51% no-repeat;
+        border: 4px $white solid;
+        border-radius: 50%;
+        content: "";
+        display: block;
+        margin: auto;
+      }
+
+      &:hover {
+        cursor: pointer;
+
+        &:after {
+          background-color: $blue;
+        }
+      }
+
+      iframe {
+        @include size(100%);
+        border: 0;
+        display: none;
+      }
+
+      &.show-video {
+        &:after {
+          display: none;
+        }
+
+        iframe {
+          display: block;
+        }
+      }
+    }
+
+    .caption {
+      display: none;
+    }
   }
 }

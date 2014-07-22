@@ -33,6 +33,7 @@ p {
 a {
   @include transition(color 0.1s linear);
   color: $base-link-color;
+  font-weight: $bold-font-weight;
   text-decoration: none;
 
   &:hover {

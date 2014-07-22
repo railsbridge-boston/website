@@ -11,8 +11,16 @@ section {
 }
 
 .caption {
-  color: $gray-light;
+  color: darken($gray-light, 25);
   font-size: $small-font-size;
+
+  a {
+    color: darken($gray-light, 35);
+
+    &:hover {
+      color: $gray;
+    }
+  }
 }
 
 .section-title {
