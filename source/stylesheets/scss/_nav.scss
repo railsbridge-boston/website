@@ -1,9 +1,68 @@
-.header {
-  @include clearfix;
-  background: $blue;
-  border: $light-blue-border;
+header {
+  @include media($medium-screen-up) {
+    @include linear-gradient(90deg, lighten(saturate($blue, 50), 15), $blue);
+  }
+
+  .outer-container {
+    @include media($medium-screen-up) {
+      @include align-items(center);
+      @include display(flex);
+      @include justify-content(space-between);
+      @include outer-container;
+      position: relative;
+
+      &:after {
+        display: none;
+      }
+    }
+  }
+}
+
+.header-bar {
+  @include media($medium-screen-down) {
+    @include clearfix;
+    background: $blue;
+    border-bottom: $light-blue-border;
+    position: relative;
+    z-index: $z-header;
+  }
+}
+
+.logo {
+  color: $blue-light;
+  display: inline-block;
+  font-family: $header-font-family;
+  font-weight: $base-font-weight;
+  letter-spacing: 3px;
+  padding: .65em $side-padding;
   position: relative;
-  z-index: $z-header;
+  text-shadow: $text-shadow;
+  text-transform: uppercase;
+
+  @include media($medium-screen-up) {
+    font-size: $large-font-size;
+    padding: .5em $side-padding .5em 2em;
+  }
+
+  &:hover {
+    color: $yellow;
+  }
+
+  &:before {
+    @include media($medium-screen-up) {
+      @include position(absolute, .5em null null 0);
+      @include size(1.5em);
+      background: url("/images/gem_2x.png") no-repeat center center;
+      background-size: 100%;
+      content: "";
+      display: inline-block;
+    }
+  }
+
+  span {
+    color: $white;
+    font-weight: $bold-font-weight;
+  }
 }
 
 .nav-toggle {
@@ -14,41 +73,76 @@
   font-weight: $bold-font-weight;
   padding: 1rem 1rem;
   text-transform: uppercase;
+
+  @include media($medium-screen-up) {
+    display: none;
+  }
 }
 
 .nav {
-  @include size(100% 0%);
-  @include position(absolute, 0px null null null);
   @include transition(all .25s linear);
-  background: $blue;
   overflow: hidden;
   z-index: $z-nav;
 
-  &.is-open {
-    @include size(100%);
+  @include media($medium-screen-down) {
+    @include position(absolute, 0px null null null);
+    @include size(100% 0%);
+    background: $blue;
   }
 
-  a {
-    @extend %nav-links;
+  &.is-open {
+    @include media($medium-screen-down) {
+      @include size(100%);
+    }
   }
 
   .pages {
     @extend %vertical-align;
     margin: 0 auto;
-    max-width: 20em;
+
+    @include media($medium-screen-down) {
+      max-width: 20em;
+    }
+
+    @include media($medium-screen-up) {
+      @include transform(none);
+    }
+
+    a {
+      @extend %nav-links;
+      display: block;
+      font-weight: $base-font-weight;
+      padding: $nav-large-padding;
+      text-align: center;
+
+      @include media($medium-screen-up) {
+        padding: .75em 1.25em;
+      }
+    }
 
     li {
       border-bottom: $light-blue-border;
 
-      &:last-of-type {
-        border: 0;
+      @include media($medium-screen-up) {
+        border-bottom: 0;
+        display: inline-block;
       }
 
-      a {
-        display: block;
-        padding: 1.5em 1em;
-        text-align: center;
+      &.home {
+        @include media($medium-screen-up) {
+          display: none;
+        }
+      }
+
+      &:last-of-type {
+        border: 0;
       }
     }
   }
 }
+
+body.about .about,
+body.resources .resources {
+  border-bottom: 4px $yellow solid;
+}
+

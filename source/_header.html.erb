@@ -1,11 +1,14 @@
 <header>
-  <div class="header">
-    <% link_to "/" do %>
-      RailsBridge <span>Bos</span>
-    <% end %>
+  <div class="outer-container">
+    <div class="header-bar">
+      <% link_to "/", class: "logo" do %>
+        RailsBridge <span>Bos</span>
+      <% end %>
 
-    <%= link_to "Menu", "#!", class: "nav-toggle" %>
+      <%= link_to "Menu", "#!", class: "nav-toggle" %>
+    </div>
+
+    <%= partial "nav" %>
   </div>
-
-  <%= partial "nav" %>
 </header>
+
