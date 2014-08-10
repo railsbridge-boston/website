@@ -15,15 +15,11 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 h1 {
-  font-size: $base-font-size * 1.888888889; // 34px
+  font-size: em(30); // 30px
 }
 
 h2 {
-  font-size: $base-font-size * 1.666666667; // 30px
-}
-
-h3 {
-  font-size: $base-font-size * 1.444444444; // 26px
+  font-size: em(26); // 26px
 }
 
 p {

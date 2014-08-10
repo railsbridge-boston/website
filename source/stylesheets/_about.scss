@@ -1,0 +1,103 @@
+.workshop-images {
+  @include display(flex);
+  @include flex-wrap(wrap);
+
+  li {
+    overflow: hidden;
+    width: 50%;
+
+    @include media($medium-screen-up) {
+      width: 25%;
+    }
+  }
+
+  img {
+    float: left;
+    width: 100%;
+  }
+}
+
+.purpose {
+  div {
+    margin-top: 2em;
+
+    @include media($medium-screen-up) {
+      @include span-columns(5.5);
+
+      &:nth-of-type(2) {
+        @include shift(1);
+      }
+    }
+  }
+}
+
+.civility-policy {
+  border-bottom: $light-blue-border;
+  border-top: $light-blue-border;
+
+  .wrap {
+    @include media($medium-screen-up) {
+      @include column-count(2);
+      @include column-gap(5.75em);
+    }
+  }
+}
+
+$contact-types: (
+  twitter: image-url("twitter.svg"),
+  github: image-url("github.svg"),
+  email: image-url("email.svg"),
+  googlegroup: image-url("google-group.svg")
+);
+
+%internal-section-grid {
+  ul {
+    @include media($large-screen-up) {
+      @include display(flex);
+    }
+  }
+
+  li {
+    margin-bottom: 1.25em;
+
+    @include media($large-screen-up) {
+      @include span-columns(3 of 12);
+    }
+  }
+}
+
+.contact {
+  @extend %internal-section-grid;
+  padding-bottom: 0;
+
+  li {
+    @include media($large-screen-up) {
+      padding-top: 3em;
+      position: relative;
+    }
+
+    &:before {
+      @include size(1.25em);
+      background-position: center center;
+      background-repeat: no-repeat;
+      background-size: 100%;
+      content: "";
+      display: inline-block;
+
+      @include media($large-screen-up) {
+        @include position(absolute, 0 null null 0);
+        @include size(2.25em);
+      }
+    }
+
+    @each $type, $background-url in $contact-types {
+      &.contact-#{$type}:before {
+        background-image: #{$background-url};
+      }
+    }
+  }
+}
+
+.links-out {
+  @extend %internal-section-grid;
+}

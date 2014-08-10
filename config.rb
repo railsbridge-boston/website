@@ -13,3 +13,6 @@ configure :development do
   activate :livereload
   activate :dotenv
 end
+
+activate :directory_indexes
+activate :relative_assets

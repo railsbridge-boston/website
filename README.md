@@ -15,12 +15,6 @@ $ middleman
 $ open http://localhost:4567
 ```
 
-To update the styles:
-```sh
-$ cd source
-$ sass --watch stylesheets/scss/:stylesheets
-```
-
 If you'd like to work with actual Eventbrite data, you'll have to set the
 `EVENTBRITE_ACCESS_TOKEN` variable to a real token in your `.env` file. You can
 get this via `heroku config` if you have access or from [Eventbrite App

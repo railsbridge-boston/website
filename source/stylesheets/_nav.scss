@@ -22,7 +22,7 @@ header {
   @include media($medium-screen-down) {
     @include clearfix;
     background: $blue;
-    border-bottom: $light-blue-border;
+    border-bottom: $nav-blue-border;
     position: relative;
     z-index: $z-header;
   }
@@ -121,14 +121,14 @@ header {
     }
 
     li {
-      border-bottom: $light-blue-border;
+      border-bottom: $nav-blue-border;
 
       @include media($medium-screen-up) {
         border-bottom: 0;
         display: inline-block;
       }
 
-      &.home {
+      &.page-home {
         @include media($medium-screen-up) {
           display: none;
         }
@@ -141,8 +141,8 @@ header {
   }
 }
 
-body.about .about,
-body.resources .resources {
+body.about .page-about,
+body.resources .page-resources {
   border-bottom: 4px $yellow solid;
 }
 

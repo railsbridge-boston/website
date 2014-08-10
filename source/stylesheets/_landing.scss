@@ -14,10 +14,6 @@
       margin: 0 auto;
       overflow: visible;
     }
-
-    .home {
-      display: none;
-    }
   }
 
   .pages {
@@ -25,7 +21,7 @@
       @include shift(1);
       @include span-columns(10);
       @include transform(translateY(0));
-      border-bottom: $light-blue-border;
+      border-bottom: $nav-blue-border;
       top: 0;
       max-width: inherit;
     }
@@ -34,7 +30,7 @@
       @include media($medium-screen) {
         @include position(absolute, 2.85em 0px null 0px);
         @include size(2.5em 3.5em);
-        background: url("/images/train.png") center center no-repeat;
+        background: image-url("train.png") center center no-repeat;
         background-size: auto 100%;
         content: "";
         display: block;
@@ -48,7 +44,7 @@
         border: 0;
         display: inline-block;
 
-        &.blog, &.curriculum {
+        &.page-blog, &.page-curriculum {
           a {
             text-align: right;
           }
@@ -66,7 +62,10 @@
 }
 
 .hero {
-  @include background-image(radial-gradient(circle at 50% 114%, lighten($blue, 10) 21%, $blue 80%));
+  @include radial-gradient(50% 114%,
+                            circle cover,
+                            lighten($blue, 10) 21%,
+                            $blue 80%);
   padding: 3em $side-padding;
   text-align: center;
 
@@ -75,7 +74,7 @@
   }
 
   .boston {
-    background: url("/images/boston.png") no-repeat center top;
+    background: image-url("boston.png") no-repeat center top;
     background-size: 100%;
     margin-bottom: 1em;
     padding: 20% 0 1em 0;
@@ -83,7 +82,7 @@
 
     @include media($medium-screen) {
       @include outer-container;
-      background-image: url("/images/boston_2x.png");
+      background-image: image-url("boston_2x.png");
       background-position: center center;
       background-size: 90%;
       padding: 9em 0 15% 0;
@@ -120,21 +119,17 @@
       display: block;
       font-family: $serif;
       font-size: em(40);
-      margin-top: 1rem;
+      line-height: 1em;
+      margin-top: .2em;
 
       @include media($medium-screen) {
-        margin-top: .35em;
+        margin-top: .125em;
       }
     }
   }
 
   .register-link {
-    @extend %link-callout;
-    color: $yellow;
-
-    &:hover {
-      color: lighten($yellow, 15);
-    }
+    @include button-callout($yellow);
 
     &:after {
       content: "\BB";
@@ -204,27 +199,20 @@
   }
 
   input[type="submit"] {
-    $submit-color: $gray;
-    background-color: $submit-color;
-    border-bottom: 2px darken($submit-color, 8) solid;
-
-    &:hover {
-      background-color: darken($submit-color, 8);
-    }
+    @include button-callout($gray);
   }
 }
 
 .summary {
   background-color: $gray-light;
-  background-image: url("/images/reflection.png"),
-                    url("/images/workshop.png");
+  background-image: image-url("reflection.png"), image-url("workshop.png");
   background-position: center -10px, right bottom;
   background-repeat: repeat-x, no-repeat;
   background-size: auto, cover;
 
   @include media($medium-screen) {
-    background-image: url("/images/reflection_2x.png"),
-                      url("/images/workshop_2x.png");
+    background-image: image-url("reflection_2x.png"),
+                      image-url("workshop_2x.png");
     background-position: center -10px, center 25%;
     background-size: 70%, cover;
   }
@@ -276,7 +264,7 @@
         @include position(absolute, 0 0 0 0);
         @include size(6em);
         @include transition;
-        background: url("/images/play.png") 56% 51% no-repeat;
+        background: image-url("play.png") 56% 51% no-repeat;
         border: 4px $white solid;
         border-radius: 50%;
         content: "";

@@ -1,0 +1,11 @@
+.internal {
+  h1 {
+    font-family: $serif;
+    font-size: em(60);
+    font-weight: $base-font-weight;
+  }
+
+  section {
+    @include outer-container;
+  }
+}

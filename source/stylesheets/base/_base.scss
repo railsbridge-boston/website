@@ -4,16 +4,16 @@
 // Variables
 @import 'variables';
 
-// Mixins
-@import 'mixins/flash';
-
 // Extends
 @import 'extends/button';
 @import 'extends/clearfix';
 @import 'extends/hide-text';
 @import 'extends/vertical-align';
-@import 'extends/nav-links';
-@import 'extends/link-callout';
+@import 'extends/links';
+
+// Mixins
+@import 'mixins/flash';
+@import 'mixins/buttons';
 
 // Typography and Elements
 @import 'typography';
