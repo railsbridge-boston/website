@@ -12,16 +12,21 @@ title: RailsBridge Boston - Ruby and Rails workshop
     <%= image_tag "rubygem_2x.png", :class => "gem" %>
   </div>
   <h1 class="title">RailsBridge <span>Boston</span></h1>
-  <%= link_to "Register for the workshop", "http://railsbridge-boston-may-2014.eventbrite.com/", :class => "register-link" %>
+  <% if next_event.url %>
+    <%= link_to "Register for the workshop", next_event.url,
+      class: "register-link", target: "_blank" %>
+  <% end %>
 </section>
 
 <div class="actionable-sections">
   <section class="next-workshop">
     <h2 class="section-title">Next workshop</h2>
-    <h2 class="workshop-title dummy">Name of next workshop</h2>
-    <p class="workshop-date dummy">January 1 &ndash; 2, 2014</p>
-    <p class="workshop-description dummy">This is the sequel to our January Ruby workshop. We'll pick up where we left off, and introduce the Rails half of Ruby on Rails.</p>
-    <%= link_to "Register for the workshop", "http://railsbridge-boston-may-2014.eventbrite.com/", :class => "register-link button" %>
+    <h2 class="workshop-title dummy"><%= next_event.title %></h2>
+    <p class="workshop-date dummy"><%= next_event.dates %></p>
+    <div class="workshop-description dummy"><%= next_event.description %></div>
+    <% if next_event.url %>
+      <%= link_to "Register for the workshop", next_event.url, class: "register-link button", target: "_blank" %>
+    <% end %>
   </section>
 
   <section class="mailing-list">

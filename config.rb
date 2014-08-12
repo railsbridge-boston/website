@@ -1,3 +1,7 @@
+require "lib/event_helpers"
+
+helpers EventHelpers
+
 page "/index.html", layout: :landing
 
 set :build_dir, 'tmp'
@@ -5,4 +9,7 @@ set :css_dir, 'stylesheets'
 set :js_dir, 'javascripts'
 set :images_dir, 'images'
 
-activate :livereload
+configure :development do
+  activate :livereload
+  activate :dotenv
+end
