@@ -19,4 +19,5 @@ gem "wdm", "~> 0.1.0", platforms: [:mswin, :mingw]
 group :test do
   gem "rspec"
   gem "webmock"
+  gem "rake"
 end

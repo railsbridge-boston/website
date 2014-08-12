@@ -1,6 +1,9 @@
 RailsBridge Boston Website
 ==========================
 
+[![Build
+Status](https://travis-ci.org/railsbridge-boston/website.svg?branch=master)](https://travis-ci.org/railsbridge-boston/website)
+
 This is a redesign of the current RailsBridge Boston [website](http://www.railsbridgeboston.org).
 
 It is currently hosted on Heroku: http://railsbridge-boston-staging.herokuapp.com/.
