@@ -45,14 +45,20 @@ header {
   }
 
   &:hover {
-    color: $yellow;
+    @include media($medium-screen-up) {
+      color: $base-accent-color;
+
+      &:before {
+        @include animation(wiggle .25s linear);
+      }
+    }
   }
 
   &:before {
     @include media($medium-screen-up) {
       @include position(absolute, .5em null null 0);
       @include size(1.5em);
-      background: url("/images/gem_2x.png") no-repeat center center;
+      background: image-url("gem.svg") no-repeat center center;
       background-size: 100%;
       content: "";
       display: inline-block;
@@ -143,6 +149,6 @@ header {
 
 body.about .page-about,
 body.resources .page-resources {
-  border-bottom: 4px $yellow solid;
+  border-bottom: 4px $base-accent-color solid;
 }
 

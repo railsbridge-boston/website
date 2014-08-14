@@ -1,0 +1,11 @@
+@include keyframes(wiggle) {
+  0% {
+    @include transform(rotate(-10deg));
+  }
+  75% {
+    @include transform(rotate(6deg));
+  }
+  100% {
+    @include transform(rotate(0deg));
+  }
+}
