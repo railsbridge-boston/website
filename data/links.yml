@@ -1,0 +1,35 @@
+contacts:
+- googlegroup:
+  type: "googlegroup"
+  title: "Alumni Google Group"
+  url: "https://groups.google.com/forum/?fromgroups#!forum/railsbridge-boston-alumni"
+  description: "If you graduated from or volunteered at one of our workshops, join our"
+- github:
+  type: "github"
+  title: "Github"
+  url: "https://github.com/railsbridge-boston/railsbridge-boston/issues"
+  description: "Tell us how we can improve our curriculumn at"
+- twitter:
+  type: "twitter"
+  title: "@RailsBridgeBoston"
+  url: "https://twitter.com/RailsBridgeBos"
+  description: "Follow us on Twitter,"
+- email:
+  type: "email"
+  title: "railsbridgeboston@gmail.com"
+  url: "mailto:railsbridgeboston@gmail.com"
+  description: "Email us directly,"
+
+friends:
+- railsbridge:
+  name: "RailsBridge"
+  url: "http://workshops.railsbridge.org/"
+  description: "The original San Francisco Ruby on Rails workshop that made our effort possible."
+- openhatch:
+  name: "OpenHatch"
+  url: "https://openhatch.org/"
+  description: "Our wonderful outreach effort mentors."
+- bostonrb:
+  name: "BostonRB"
+  url: "http://bostonrb.org/"
+  description: "The official local Ruby user group, and a wonderful community of helpful Rubyists."

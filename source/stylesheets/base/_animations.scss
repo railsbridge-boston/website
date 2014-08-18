@@ -1,9 +1,9 @@
 @include keyframes(wiggle) {
   0% {
-    @include transform(rotate(-10deg));
+    @include transform(rotate(-15deg));
   }
-  75% {
-    @include transform(rotate(6deg));
+  80% {
+    @include transform(rotate(10deg));
   }
   100% {
     @include transform(rotate(0deg));

@@ -17,28 +17,34 @@
   }
 }
 
-.purpose {
-  div {
-    margin-top: 2em;
+.empowering-women,
+.promoting-diversity {
+  @include media($medium-screen-up) {
+    @include span-columns(5.5);
+    padding-top: 2em;
+  }
+}
 
-    @include media($medium-screen-up) {
-      @include span-columns(5.5);
-
-      &:nth-of-type(2) {
-        @include shift(1);
-      }
-    }
+.promoting-diversity {
+  @include media($medium-screen-up) {
+    @include omega;
+    @include shift(1);
   }
 }
 
 .civility-policy {
-  border-bottom: $light-blue-border;
-  border-top: $light-blue-border;
+  border-bottom: $light-border;
+  border-top: $light-border;
+  clear: both;
 
   .wrap {
     @include media($medium-screen-up) {
       @include column-count(2);
       @include column-gap(5.75em);
+    }
+
+    p {
+      display: inline-block;
     }
   }
 }

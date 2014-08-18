@@ -3,9 +3,12 @@
     font-family: $serif;
     font-size: em(60);
     font-weight: $base-font-weight;
+    margin-top: .75em;
   }
 
-  section {
-    @include outer-container;
+  main {
+    @include media($medium-screen-up) {
+      padding-bottom: 4em;
+    }
   }
 }
