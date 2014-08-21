@@ -1,7 +1,3 @@
-require "lib/event_helpers"
-
-helpers EventHelpers
-
 page "/index.html", layout: :landing
 
 set :build_dir, 'tmp'
