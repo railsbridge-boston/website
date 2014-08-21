@@ -5,7 +5,7 @@ require "venue"
 describe Event do
   describe "#description" do
     it "returns the workshop content portion of the event description" do
-      stub_const("Event::DESCRIPTION_ELEMENT_ID", "somewhere")
+      set_description_id_to
       description_html = '<b>Some</b> stuff'
       event = Event.new(event_with_description(description_html))
 
@@ -13,11 +13,24 @@ describe Event do
     end
 
     it "clears out any styles" do
-      stub_const("Event::DESCRIPTION_ELEMENT_ID", "somewhere")
+      set_description_id_to
       description_html = '<span style="color: red">Some</span> stuff'
       event = Event.new(event_with_description(description_html))
 
       expect(event.description).to eq('<span>Some</span> stuff')
+    end
+
+    context "when there is no description set" do
+      it "returns placeholder text" do
+        description_html = '<span style="color: red">Some</span> stuff'
+        event = Event.new("description" => description_html)
+
+        expect(event.description).to eq("More details to come.")
+      end
+    end
+
+    def set_description_id_to
+      stub_const("Event::DESCRIPTION_ELEMENT_ID", "somewhere")
     end
 
     def event_with_description(content)

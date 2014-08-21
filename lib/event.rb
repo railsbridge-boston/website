@@ -1,5 +1,5 @@
 class Event
-  DESCRIPTION_ELEMENT_ID = "what-will-i-learn"
+  DESCRIPTION_ELEMENT_ID = "summary"
 
   def initialize(details)
     @details = details
@@ -12,11 +12,11 @@ class Event
   def description
     content = html_node_for(full_description).first
 
-    content.traverse do |node|
-      node.delete "style"
+    if content
+      clear_styles_in_html(content)
+    else
+      "More details to come."
     end
-
-    content.inner_html
   end
 
   def dates
@@ -48,6 +48,14 @@ class Event
 
   def full_description
     details["description"]
+  end
+
+  def clear_styles_in_html(content)
+    content.traverse do |node|
+      node.delete "style"
+    end
+
+    content.inner_html
   end
 
   def start_date
