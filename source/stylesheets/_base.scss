@@ -7,6 +7,10 @@ main, footer {
   padding: 0 $side-padding;
 }
 
+section {
+  padding: 3em 0;
+}
+
 footer {
   @include clearfix;
 
@@ -36,10 +40,6 @@ footer {
       }
     }
   }
-}
-
-section {
-  padding: 3em 0;
 }
 
 .button {
