@@ -6,7 +6,7 @@ ruby '2.1.0'
 
 gem "middleman", "~> 3.2.2"
 gem "middleman-livereload"
-gem "middleman-dotenv", "~> 1.0.0"
+gem "middleman-dotenv"
 gem "rack-contrib"
 gem "compass", "~> 1.0.0.alpha.20"
 gem "jquery-middleman"
