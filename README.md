@@ -4,16 +4,21 @@ RailsBridge Boston Website
 [![Build
 Status](https://travis-ci.org/railsbridge-boston/website.svg?branch=master)](https://travis-ci.org/railsbridge-boston/website)
 
-This is a redesign of the current RailsBridge Boston [website](http://www.railsbridgeboston.org).
+This is the website for RailsBridge Boston, a chapter of [RailsBridge]. You can
+check out the site at <http://www.railsbridgeboston.org>. This does *not*
+include any curriculum content.
 
-It is currently hosted on Heroku: http://railsbridge-boston-staging.herokuapp.com/.
+RailsBridge Boston organizes workshops for women and their friends to learn
+Ruby, Rails, and other web technologies.
 
-To run the app locally:
-```sh
-$ ./bin/setup
-$ middleman
-$ open http://localhost:4567
-```
+[RailsBridge]: http://www.railsbridge.org
+
+Running the app locally
+----------------------
+
+    $ ./bin/setup
+    $ middleman
+    $ open http://localhost:4567
 
 Using real event data
 ---------------------
