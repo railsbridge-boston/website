@@ -8,7 +8,7 @@ contacts:
   type: "github"
   title: "Github"
   url: "https://github.com/railsbridge-boston/railsbridge-boston/issues"
-  description: "Tell us how we can improve our curriculumn at"
+  description: "Tell us how we can improve our curriculum at"
 - twitter:
   type: "twitter"
   title: "@RailsBridgeBoston"
