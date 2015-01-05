@@ -1,13 +1,13 @@
-require "lib/eventbrite"
+require "lib/tito"
 
 module EventHelpers
   def next_event
-    event_manager.upcoming_events.first
+    event_manager.upcoming_event
   end
 
   private
 
   def event_manager
-    Eventbrite.new
+    Tito.new
   end
 end

@@ -1,8 +1,8 @@
-require "null_event"
+require "tito/null_event"
 
-describe NullEvent do
+describe Tito::NullEvent do
   def null_event
-    NullEvent.new
+    Tito::NullEvent.new
   end
 
   describe "#title" do
@@ -26,12 +26,6 @@ describe NullEvent do
   describe "#url" do
     it "returns nil" do
       expect(null_event.url).to be_nil
-    end
-  end
-
-  describe "#venue" do
-    it "returns nil" do
-      expect(null_event.venue).to be_nil
     end
   end
 end

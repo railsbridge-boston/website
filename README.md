@@ -23,11 +23,11 @@ Running the app locally
 Using real event data
 ---------------------
 
-If you'd like to work with actual Eventbrite data, you'll have to set the
-`EVENTBRITE_ACCESS_TOKEN` variable to a real token in your `.env` file.
+If you'd like to work with real event data, you'll have to set the
+`TITO_AUTH_TOKEN` variable to a real token in your `.env` file.
 
-You can get this via `heroku config:get EVENTBRITE_ACCESS_TOKEN` if you have
+You can get this via `heroku config:get TITO_AUTH_TOKEN` if you have
 Heroku access or from [Eventbrite App Management] if you have access to the
-RailsBridge Boston Eventbrite account. Otherwise, ask a maintainer for access.
+RailsBridge Boston Tito account. Otherwise, ask a maintainer for access.
 
 [Eventbrite App Management]: http://www.eventbrite.com/myaccount/apps/
