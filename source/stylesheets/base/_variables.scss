@@ -33,17 +33,18 @@ $blue-light: #CCE3FF;
 $gray: #515151;
 $gray-light: #E9E9E9;
 
-$orange: #E74322;
+$orange: #FF5F05;
 $white: white;
 $yellow: #FFD609;
 
 $base-background-color: $white;
 $base-font-color: $gray;
 $base-accent-color: $yellow;
-$base-link-color: $orange;
-$hover-link-color: darken($base-link-color, 15);
-$base-button-color: $yellow;
+$base-link-color: darken($blue, 15);
+$hover-link-color: $orange;
+$base-button-color: darken($yellow, 2);
 $hover-button-color: darken($base-button-color, 3);
+$secondary-button-color: lighten($gray, 45);
 
 $text-shadow: 0 1px 4px rgba(0,0,0,0.10);
 

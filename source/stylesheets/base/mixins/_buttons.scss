@@ -1,12 +1,11 @@
 @mixin button-callout($color) {
-  @extend %link-callout;
+  @extend %button;
   background-color: $color;
-  border-bottom: 2px darken($color, 8) solid;
-  padding-left: 1.5em;
-  padding-right: 1.5em;
+  border-bottom-color: darken($color, 8);
 
   &:hover {
-    background-color: darken($color, 8);
+    background-color: $orange;
+    border-bottom-color: transparent;
   }
 }
 

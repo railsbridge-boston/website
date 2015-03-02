@@ -7,7 +7,7 @@
   }
 
   main {
-    @include media($medium-screen-up) {
+    @include media($large-screen-up) {
       padding-bottom: 4em;
     }
   }

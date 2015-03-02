@@ -3,19 +3,20 @@ title: RailsBridge Boston - Ruby and Rails workshop
 ---
 
 <header class="header-bar">
-  <%= link_to "Menu", "#!", :class => "nav-toggle" %>
+  <%= link_to "Menu", "#!", class: "nav-toggle" %>
 </header>
 <%= partial "nav" %>
 
 <section class="hero">
   <div class="boston">
-    <%= image_tag "rubygem_2x.png", :class => "gem" %>
+    <%= image_tag "train.svg", class: "railsbridge" %>
+
+    <h1 class="title">RailsBridge <span>Boston</span></h1>
+    <% if next_event.url %>
+      <%= link_to "Register for the workshop", next_event.url,
+        class: "register-link", target: "_blank" %>
+    <% end %>
   </div>
-  <h1 class="title">RailsBridge <span>Boston</span></h1>
-  <% if next_event.url %>
-    <%= link_to "Register for the workshop", next_event.url,
-      class: "register-link", target: "_blank" %>
-  <% end %>
 </section>
 
 <div class="actionable-sections">

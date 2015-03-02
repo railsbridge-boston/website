@@ -28,7 +28,7 @@ footer {
     font-size: $small-font-size;
     margin-bottom: .25em;
 
-    @include media($medium-screen-up) {
+    @include media($large-screen-up) {
       margin-bottom: 2rem;
 
       &:first-of-type {

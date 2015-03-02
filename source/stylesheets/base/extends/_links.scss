@@ -5,6 +5,10 @@
   &:hover {
     color: white;
   }
+
+  &:active, &:focus {
+    color: $blue-light;
+  }
 }
 
 %link-callout {

@@ -26,36 +26,12 @@
       max-width: inherit;
     }
 
-    &:after {
-      @include media($medium-screen) {
-        @include position(absolute, 2.85em 0px null 0px);
-        @include size(2.5em 3.5em);
-        background: image-url("train.svg") center center no-repeat;
-        background-size: auto 100%;
-        content: "";
-        display: block;
-        margin: auto;
-      }
-    }
-
     li {
       @include media($medium-screen) {
-        @include span-columns(2 of 8);
+        @include span-columns(2 of 10);
         border: 0;
         display: inline-block;
-
-        &.page-blog, &.page-curriculum {
-          a {
-            text-align: right;
-          }
-        }
-      }
-
-      a {
-        @include media($medium-screen) {
-          padding: $nav-large-padding;
-          text-align: left;
-        }
+        padding: $nav-large-padding;
       }
     }
   }
@@ -77,15 +53,22 @@
     background: image-url("boston.png") no-repeat center top;
     background-size: 100%;
     margin-bottom: 1em;
-    padding: 20% 0 1em 0;
     position: relative;
 
     @include media($medium-screen) {
       @include outer-container;
       background-image: image-url("boston_2x.png");
-      background-position: center center;
+      background-position: center 4em;
       background-size: 90%;
-      padding: 9em 0 15% 0;
+      padding: 7em 0 1% 0;
+    }
+
+    img {
+      max-width: 3rem;
+
+      @include media($medium-screen) {
+        max-width: 5rem;
+      }
     }
 
     .gem {
@@ -104,14 +87,13 @@
     color: $blue-light;
     font-size: $large-font-size;
     letter-spacing: 5px;
+    margin-top: 1em;
     text-shadow: $text-shadow;
     text-transform: uppercase;
 
     @include media($medium-screen) {
       font-size: 2em;
-      margin-top: -5%;
-      position: relative;
-      z-index: $z-rbb-title;
+      margin-top: 1.5em;
     }
 
     span {
@@ -212,7 +194,7 @@
   }
 
   input[type="submit"] {
-    @include button-callout($gray);
+    @include button-callout($secondary-button-color);
   }
 }
 
