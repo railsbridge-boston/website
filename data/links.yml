@@ -11,7 +11,7 @@ contacts:
   description: "Tell us how we can improve our curriculum at"
 - twitter:
   type: "twitter"
-  title: "@RailsBridgeBoston"
+  title: "@RailsBridgeBos"
   url: "https://twitter.com/RailsBridgeBos"
   description: "Follow us on Twitter,"
 - email:
