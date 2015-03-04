@@ -70,9 +70,7 @@
 }
 
 .organization-cta {
-  border-bottom: $light-border;
   margin-bottom: 3em;
-  padding-bottom: 3em;
 
   li {
     @include media($small-screen) {
