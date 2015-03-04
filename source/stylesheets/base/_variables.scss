@@ -42,6 +42,7 @@ $base-font-color: $gray;
 $base-accent-color: $yellow;
 $base-link-color: darken($blue, 15);
 $hover-link-color: $orange;
+$secondary-link-color: darken($gray-light, 10);
 $base-button-color: darken($yellow, 2);
 $hover-button-color: darken($base-button-color, 3);
 $secondary-button-color: lighten($gray, 45);

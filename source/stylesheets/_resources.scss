@@ -35,7 +35,7 @@
 
   a {
     @extend %link-callout;
-    color: darken($gray-light, 10);
+    color: $secondary-link-color;
 
     &:hover {
       color: $gray;
