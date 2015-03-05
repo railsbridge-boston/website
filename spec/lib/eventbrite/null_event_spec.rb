@@ -1,8 +1,8 @@
-require "tito/null_event"
+require "eventbrite/null_event"
 
-describe Tito::NullEvent do
+describe Eventbrite::NullEvent do
   def null_event
-    Tito::NullEvent.new
+    Eventbrite::NullEvent.new
   end
 
   describe "#title" do
@@ -26,6 +26,12 @@ describe Tito::NullEvent do
   describe "#url" do
     it "returns nil" do
       expect(null_event.url).to be_nil
+    end
+  end
+
+  describe "#venue" do
+    it "returns nil" do
+      expect(null_event.venue).to be_nil
     end
   end
 end

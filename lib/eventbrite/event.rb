@@ -1,21 +1,13 @@
-class Tito
+require_relative "venue"
+
+class Eventbrite
   class Event
     def initialize(details)
       @details = details
     end
 
     def title
-      details["title"]
-    end
-
-    def description
-      content = details["description"]
-
-      if content.empty?
-        "More details to come."
-      else
-        content
-      end
+      details["name"]["text"]
     end
 
     def dates
@@ -29,16 +21,20 @@ class Tito
       details["url"]
     end
 
+    def venue
+      Eventbrite::Venue.new(details["venue"])
+    end
+
     private
 
     attr_reader :details
 
     def start_date
-      details["start_date"]
+      details["start"]["local"]
     end
 
     def end_date
-      details["end_date"]
+      details["end"]["local"]
     end
   end
 end

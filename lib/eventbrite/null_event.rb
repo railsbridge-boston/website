@@ -1,4 +1,4 @@
-class Tito
+class Eventbrite
   class NullEvent
     def title
       nil
@@ -13,6 +13,10 @@ class Tito
     end
 
     def url
+      nil
+    end
+
+    def venue
       nil
     end
   end

@@ -19,25 +19,26 @@ title: RailsBridge Boston - Ruby and Rails workshop
   </div>
 </section>
 
-<div class="actionable-sections">
-  <section class="next-workshop">
-    <h2 class="section-title">Next workshop</h2>
-    <h2 class="workshop-title"><%= next_event.title %></h2>
-    <p class="workshop-date"><%= next_event.dates %></p>
-    <div class="workshop-description"><%= next_event.description %></div>
+<section class="upcoming">
+  <iframe src=<%= venue_map_url %> width="300" height="225" frameborder="0" style="border:0"></iframe>
+  <div class="workshop">
+    <h2 class="section-title"><%= next_event.dates %></h2>
+    <p><%= next_event_venue.name %></p>
+    <p><%= next_event_venue.address %></p>
     <% if next_event.url %>
-      <%= link_to "Register for the workshop", next_event.url, class: "register-link button", target: "_blank" %>
+      <%= link_to "Register for workshop", next_event.url, class: "register-link button", target: "_blank" %>
     <% end %>
-  </section>
+  </div>
+</section>
 
-  <section class="mailing-list">
+<section class="mailing-list">
+  <div class="text">
     <h2 class="section-title">Stay in the loop</h2>
-
     <p>Want to know about new upcoming workshops? Sign up for our announcement list and we’ll keep you updated!</p>
+  </div>
 
-    <%= partial "mailchimp_form" %>
-  </section>
-</div>
+  <%= partial "mailchimp_form" %>
+</section>
 
 <section class="summary">
   <div class="wrap">
