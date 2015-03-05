@@ -1,4 +1,5 @@
-.donate {
+.donate,
+.thanks {
   background: image-url('workshop2.jpg') center top no-repeat;
 
   @include media($medium-screen) {
@@ -84,11 +85,20 @@
 
   .cta-email {
     @include button-callout($secondary-button-color);
-    margin-top: 1em;
+    margin: 1em inherit;
 
     @include media($small-screen) {
-      margin-right: 1em;
-      margin-top: 0;
+      margin: 0 1em 0 inherit;
     }
   }
+}
+
+.thanks main a {
+  @extend %link-callout;
+}
+
+.thanks-heart {
+  animation: heart 2s $ease-in-out-quad infinite;
+  max-width: 0.5em;
+  vertical-align: top;
 }
