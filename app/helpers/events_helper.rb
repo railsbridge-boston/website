@@ -10,6 +10,6 @@ module EventsHelper
   private
 
   def event_manager
-    Eventbrite.new
+    @event_manager ||= Eventbrite.new
   end
 end

@@ -28,7 +28,7 @@ class Eventbrite
   end
 
   def user_events_response
-    self.class.get(
+    @user_events_response ||= self.class.get(
       events_owned_by_user_api_url,
       query: credentials.merge(event_criteria)
     )
@@ -45,7 +45,7 @@ class Eventbrite
   end
 
   def user_response
-    self.class.get(user_profile_api_url, query: credentials)
+    @user_response ||= self.class.get(user_profile_api_url, query: credentials)
   end
 
   def user_profile_api_url
