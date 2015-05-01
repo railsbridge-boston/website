@@ -1,0 +1,78 @@
+.class-levels {
+  main {
+    @include media($small-screen) {
+      margin: inherit auto;
+      max-width: $small-screen;
+    }
+  }
+
+  h3 {
+    color: $secondary-link-color;
+    margin: 1em inherit;
+  }
+}
+
+.levels {
+  position: relative;
+
+  &::before {
+    @include size(2em);
+    background-color: $white;
+    border: 3px $gray-light solid;
+    border-radius: 50%;
+    color: darken($gray-light, 25);
+    content: "1";
+    display: inline-block;
+    font-family: $sans-serif;
+    font-weight: $bold-font-weight;
+    line-height: 2em;
+    margin-bottom: 1em;
+    text-align: center;
+
+    @include media($medium-screen) {
+      @include position(absolute, 2.65em null null -4em);
+      margin-bottom: 0;
+    }
+  }
+
+  &::after {
+    @include media($medium-screen) {
+      @include position(absolute, 4em null null -2.85em);
+      @include size(.15em 100%);
+      background: lighten($gray-light, 5);
+      content: "";
+      display: block;
+      z-index: $z-under;
+    }
+  }
+
+  &:last-of-type::after {
+    display: none;
+  }
+
+  li {
+    display: inline-block;
+
+    &::before {
+      @include margin(null 0.5em null -0.75em);
+      @include size(0.25em);
+      background-color: $gray-light;
+      border-radius: 50%;
+      content: "";
+      display: inline-block;
+      vertical-align: middle;
+    }
+  }
+}
+
+$levels: "level-1", "level-2", "level-3", "level-4";
+
+@each $level in $levels {
+  $number: index($levels, $level);
+
+  .#{$level}::before {
+    border-color: lighten($gray, 50 / $number);
+    color: lighten($gray, 50 / $number);
+    content: "#{$number}";
+  }
+}

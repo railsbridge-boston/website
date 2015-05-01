@@ -1,32 +1,33 @@
-# Railsbridgeboston dot org
+RailsBridge Boston Website
+==========================
 
-## Getting Started
+[![Build
+Status](https://travis-ci.org/railsbridge-boston/railsbridgeboston_dot_org.svg?branch=master)](https://travis-ci.org/railsbridge-boston/railsbridgeboston_dot_org)
 
-After you have cloned this repo, run this setup script to set up your machine
-with the necessary dependencies to run and test this app:
+This is the website for RailsBridge Boston, a chapter of [RailsBridge]. You can
+check out the site at <http://www.railsbridgeboston.org>. This does *not*
+include any curriculum content.
 
-    % ./bin/setup
+RailsBridge Boston organizes workshops for women and their friends to learn
+Ruby, Rails, and other web technologies.
 
-It assumes you have a machine equipped with Ruby, Postgres, etc. If not, set up
-your machine with [this script].
+[RailsBridge]: http://www.railsbridge.org
 
-[this script]: https://github.com/thoughtbot/laptop
+Running the app locally
+----------------------
 
-After setting up, you can run the application using [foreman]:
+    $ ./bin/setup
+    $ middleman
+    $ open http://localhost:4567
 
-    % foreman start
+Using real event data
+---------------------
 
-If you don't have `foreman`, see [Foreman's install instructions][foreman]. It
-is [purposefully excluded from the project's `Gemfile`][exclude].
+If you'd like to work with actual Eventbrite data, you'll have to set the
+`EVENTBRITE_ACCESS_TOKEN` variable to a real token in your `.env` file.
 
-[foreman]: https://github.com/ddollar/foreman
-[exclude]: https://github.com/ddollar/foreman/pull/437#issuecomment-41110407
+You can get this via `heroku config:get EVENTBRITE_ACCESS_TOKEN` if you have
+Heroku access or from [Eventbrite App Management] if you have access to the
+RailsBridge Boston Eventbrite account. Otherwise, ask a maintainer for access.
 
-## Guidelines
-
-Use the following guides for getting things done, programming well, and
-programming in style.
-
-* [Protocol](http://github.com/thoughtbot/guides/blob/master/protocol)
-* [Best Practices](http://github.com/thoughtbot/guides/blob/master/best-practices)
-* [Style](http://github.com/thoughtbot/guides/blob/master/style)
+[Eventbrite App Management]: http://www.eventbrite.com/myaccount/apps/

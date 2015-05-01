@@ -1,0 +1,5 @@
+<% if content_for?(:title) %>
+  <title><%= content_for(:title) %> - <%= t("titles.application") %></title>
+<% else %>
+  <title><%= t("titles.application") %></title>
+<% end %>

@@ -1,0 +1,161 @@
+header {
+  @include media($medium-screen-up) {
+    @include linear-gradient(90deg, lighten(saturate($blue, 50), 15), $blue);
+  }
+
+  .outer-container {
+    @include media($medium-screen-up) {
+      @include align-items(center);
+      @include display(flex);
+      @include justify-content(space-between);
+      @include outer-container;
+      position: relative;
+
+      &:after {
+        display: none;
+      }
+    }
+  }
+}
+
+.header-bar {
+  @include media($medium-screen-down) {
+    @include clearfix;
+    background: $blue;
+    border-bottom: $nav-blue-border;
+    position: relative;
+    z-index: $z-header;
+  }
+}
+
+.logo {
+  color: $blue-light;
+  display: inline-block;
+  font-family: $header-font-family;
+  font-weight: $base-font-weight;
+  letter-spacing: 3px;
+  padding: .65em $side-padding;
+  position: relative;
+  text-shadow: $text-shadow;
+  text-transform: uppercase;
+
+  @include media($medium-screen-up) {
+    font-size: $large-font-size;
+    padding: .5em $side-padding .5em 2em;
+  }
+
+  &:hover {
+    @include media($medium-screen-up) {
+      color: $base-accent-color;
+
+      &:before {
+        @include animation(wiggle .25s linear);
+      }
+    }
+  }
+
+  &:active, &:focus {
+    @include media($medium-screen-up) {
+      color: $white;
+    }
+  }
+
+  &:before {
+    @include media($medium-screen-up) {
+      @include position(absolute, .5em null null 0);
+      @include size(1.5em);
+      background: image-url("gem.svg") no-repeat center center;
+      background-size: 100%;
+      content: "";
+      display: inline-block;
+    }
+  }
+
+  span {
+    color: $white;
+    font-weight: $bold-font-weight;
+  }
+}
+
+.nav-toggle {
+  @extend %nav-links;
+  display: block;
+  float: right;
+  font-size: $small-font-size;
+  font-weight: $bold-font-weight;
+  padding: 1rem 1rem;
+  text-transform: uppercase;
+
+  @include media($medium-screen-up) {
+    display: none;
+  }
+}
+
+.nav {
+  @include transition(all .25s linear);
+  overflow: hidden;
+  z-index: $z-nav;
+
+  @include media($medium-screen-down) {
+    @include position(absolute, 0px null null null);
+    @include size(100% 0%);
+    background: $blue;
+  }
+
+  &.is-open {
+    @include media($medium-screen-down) {
+      @include size(100%);
+    }
+  }
+
+  .pages {
+    @extend %vertical-align;
+    margin: 0 auto;
+
+    @include media($medium-screen-down) {
+      max-width: 20em;
+    }
+
+    @include media($medium-screen-up) {
+      @include transform(none);
+    }
+
+    a {
+      @extend %nav-links;
+      display: block;
+      font-weight: $base-font-weight;
+      padding: $nav-large-padding;
+      text-align: center;
+
+      @include media($medium-screen-up) {
+        padding: .75em 1.25em;
+      }
+    }
+
+    li {
+      border-bottom: $nav-blue-border;
+
+      @include media($medium-screen-up) {
+        border-bottom: 0;
+        display: inline-block;
+      }
+
+      &.page-home {
+        @include media($medium-screen-up) {
+          display: none;
+        }
+      }
+
+      &:last-of-type {
+        border: 0;
+      }
+    }
+  }
+}
+
+body.about .page-about,
+body.donate .page-donate,
+body.resources .page-resources {
+  border-bottom: 4px $base-accent-color solid;
+}
+

@@ -31,6 +31,8 @@ if ! command -v foreman > /dev/null; then
   printf 'See https://github.com/ddollar/foreman for install instructions.\n'
 fi
 
-# Only if this isn't CI
-# if [ -z "$CI" ]; then
-# fi
+if [ -z "$CI" ]; then
+  # Set up staging and production git remotes
+  git remote add staging git@heroku.com:railsbridge-boston-staging.git || true
+  git remote add production git@heroku.com:railsbridge-boston.git || true
+fi

@@ -1,0 +1,63 @@
+.resources {
+  h1 {
+    margin-bottom: 1em;
+  }
+
+  section {
+    padding-top: 0;
+
+    @include media($medium-screen-up) {
+      padding-bottom: 5em;
+    }
+
+    ul {
+      list-style-type: circle;
+
+      @include media($medium-screen-down) {
+        margin-left: 1em;
+      }
+    }
+  }
+}
+
+.sticky-wrapper {
+  display: none;
+
+  @include media($medium-screen-up) {
+    display: inline-block;
+    float: left;
+    width: 25%;
+  }
+}
+
+.quick-find {
+  padding-right: 5%;
+
+  a {
+    @extend %link-callout;
+    color: $secondary-link-color;
+
+    &:hover {
+      color: $gray;
+    }
+
+    &.active {
+      color: $gray;
+    }
+  }
+
+  ul {
+    li:first-of-type a {
+      padding-top: 0;
+    }
+  }
+}
+
+.resources-content {
+  @include media($medium-screen-up) {
+    border-left: $light-border;
+    float: right;
+    padding-left: 10%;
+    width: 75%;
+  }
+}

@@ -1,0 +1,104 @@
+.donate,
+.thanks {
+  background: image-url('workshop2.jpg') center top no-repeat;
+
+  @include media($medium-screen) {
+    background-image: image-url('workshop2_2x.jpg');
+    background-position: center -3vh;
+    background-size: 100% auto;
+    position: relative;
+  }
+
+  @include media($large-screen) {
+    background-position: center -4vh;
+  }
+
+  &::before {
+    @include media($small-screen) {
+      @include size(100% 30vh);
+      @include position(absolute,17vh null null 0);
+      background: linear-gradient(rgba($white, 0), $white);
+      content: "";
+      display: block;
+    }
+  }
+
+  &::after {
+    @include media($small-screen) {
+      @include position(absolute, 47vh null 0 0);
+      background: $white;
+      content: "";
+      display: block;
+      width: 100%;
+      z-index: $z-under;
+    }
+  }
+
+  h1 {
+    margin-bottom: 0.5em;
+  }
+
+  main {
+    background-color: $white;
+    margin-bottom: 3rem;
+    margin-top: 19rem;
+    max-width: 100%;
+    position: relative;
+
+    @include media($small-screen) {
+      background-color: transparent;
+      margin: 32vh auto 5rem;
+      max-width: em(640);
+      padding: 0.25em 2em;
+    }
+
+    &::before {
+      @include position(absolute, -16rem null null 0);
+      @include size(100% 16rem);
+      background: linear-gradient(rgba($white, 0), $white);
+      content: "";
+      display: block;
+
+      @include media($small-screen) {
+        display: none;
+      }
+    }
+  }
+
+  .section-title {
+    margin-bottom: 2em;
+  }
+}
+
+.organization-cta {
+  margin-bottom: 3em;
+
+  li {
+    @include media($small-screen) {
+      display: inline-block;
+    }
+  }
+
+  .cta-prospectus {
+    @extend %link-callout;
+  }
+
+  .cta-email {
+    @include button-callout($secondary-button-color);
+    margin: 1em inherit;
+
+    @include media($small-screen) {
+      margin: 0 1em 0 inherit;
+    }
+  }
+}
+
+.thanks main a {
+  @extend %link-callout;
+}
+
+.thanks-heart {
+  animation: heart 2s $ease-in-out-quad infinite;
+  max-width: 0.5em;
+  vertical-align: top;
+}

@@ -1,0 +1,22 @@
+<nav class="nav">
+  <ul class="pages">
+    <li class="page-home">
+      <%= link_to "Home", root_path, class: "to-home" %>
+    </li>
+    <li class="page-about">
+      <%= link_to "About", page_path("about"), class: "to-about" %>
+    </li>
+    <li class="page-donate">
+      <%= link_to "Donate", page_path("donate"), class: "to-donate" %>
+    </li>
+    <li class="page-resources">
+      <%= link_to "Resources", page_path("resources"), class: "to-resources" %>
+    </li>
+    <li class="page-curriculum">
+      <%= link_to "Curriculum", "http://docs.railsbridgeboston.org", class: "to-curriculum" %>
+    </li>
+    <li class="page-blog">
+      <%= link_to "Blog", "http://railsbridgeboston.tumblr.com/", class: "to-blog" %>
+    </li>
+  </ul>
+</nav>

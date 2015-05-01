@@ -1,0 +1,18 @@
+%nav-links {
+  color: $blue-light;
+  font-family: $sans-serif;
+
+  &:hover {
+    color: white;
+  }
+
+  &:active, &:focus {
+    color: $blue-light;
+  }
+}
+
+%link-callout {
+  display: inline-block;
+  font-family: $sans-serif;
+  font-weight: $bold-font-weight;
+}

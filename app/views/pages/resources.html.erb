@@ -1,0 +1,84 @@
+<% content_for(:title, "Resources") %>
+<% content_for(:page_class, "resources") %>
+
+<main>
+  <h1>Resources</h1>
+
+  <aside class="quick-find">
+    <ul>
+      <li><%= link_to "Community", "#community", class: "to-community" %></li>
+      <li><%= link_to "Install your tools", "#install-tools", class: "to-install-tools" %></li>
+      <li><%= link_to "Learning sequence", "#learning-sequence", class: "to-learning-sequence" %></li>
+      <li><%= link_to "Tutorials", "#tutorials", class: "to-tutorials" %></li>
+      <li><%= link_to "Classes", "#classes", class: "to-classes" %></li>
+      <li><%= link_to "Bootcamps", "#bootcamps", class: "to-bootcamps" %></li>
+      <li><%= link_to "Online classes", "#online-classes", class: "to-online-classes" %></li>
+    </ul>
+  </aside>
+
+  <div class="resources-content">
+    <section class="community" id="community">
+      <h2 class="section-title">Community</h2>
+      <p>RailsBridge Boston <%= link_to "Alumni Google Group", "https://groups.google.com/forum/#!forum/railsbridge-boston-alumni" %> is for all participants, TAs, and supporters of RailsBridge Boston.</p>
+      <p>The <%= link_to "Boston Ruby Group", "http://bostonrb.org/" %> organizes <%= link_to "monthly presentations", "http://bostonrb.org/calendar" %> and <%= link_to "project night", "http://bostonrb.org/project_night" %>. Project night always has a few volunteers available specifically to help others.</p>
+      <p><%= link_to "Boston Ruby Women", "http://www.meetup.com/Boston-Ruby-Women/" %> is a monthly Meetup for women who use Ruby.</p>
+      <p>The Ruby community welcomes you.</p>
+    </section>
+
+    <section class="install-tools" id="install-tools">
+      <h2 class="section-title">Install your tools</h2>
+      <p>It's customary to install Ruby on your own laptop, and we debated for a long time before using a virtual machine. You can continue to use the RailsBridge virtual machine if you wish, but we encourage you to have your own set of tools.
+      <%= link_to "The Ruby site offers several options on its installation page", "https://www.ruby-lang.org/en/installation" %>.</p>
+    </section>
+
+    <section class="learning-sequence" id="learning-sequence">
+      <h2 class="section-title">Learning sequence</h2>
+      <p>
+        For a quick review of what we learned today, watch
+        <%= link_to "Ruby in 100 Minutes", "http://tutorials.jumpstartlab.com/projects/ruby_in_100_minutes.html" %>.
+      </p>
+      <p>Once you've got Ruby basics down, the best way to learn is to make a practice project. Projects take you off the smooth path of a tutorial and out into the exciting wild lands. Pick a problem you care about. Start small and spiral out.</p>
+      <p>Ruby on Rails is a web framework, that is, a set of libraries and tools to make a dynamic website. Come to the RailsBridge Rails workshop to learn more. If you want to get started on your own, thoughtbot's <%= link_to "Ruby Learning Trail", "https://learn.thoughtbot.com/ruby" %> maps out the route.</p>
+    </section>
+
+    <section class="tutorials" id="tutorials">
+      <h2 class="section-title">Tutorials</h2>
+      <p>There's a wealth of tutorials and resources for learning Ruby and Rails. Here are the ones we recommend starting with.</p>
+      <ul>
+        <li><%= link_to "Ruby Koans", "http://rubykoans.com/" %> are a set of puzzles that &ldquo;walk you along the path to enlightenment in order to learn Ruby. The goal is to learn the Ruby language, syntax, structure, and some common functions and libraries.&rdquo;</li>
+        <li><%= link_to "Code Wars", "http://www.codewars.com/" %> is an online set of puzzles.</li>
+        <li><%= link_to "Learn to Program", "http://pine.fm/LearnToProgram/" %> by Chris Pine is a good starting place for new programmers.</li>
+        <li><%= link_to "Programming Ruby", "http://ruby-doc.com/docs/ProgrammingRuby/" %>, a.k.a. &ldquo;the Pickaxe Book&rdquo;, is one of the most popular Ruby books.</li>
+        <li>Why not find study buddies on the <%= link_to "alumni group", "https://groups.google.com/forum/#!forum/railsbridge-boston-alumni" %>?</li>
+      </ul>
+    </section>
+
+    <section class="classes" id="classes">
+      <h2 class="section-title">Classes</h2>
+      <ul>
+        <li><%= link_to "Girl Develop It", "http://www.girldevelopit.com/chapters/boston" %> offers low-cost classes in programming and web design.</li>
+        <li>Check community programs like the Cambridge Center for Adult Education.</li>
+      </ul>
+    </section>
+
+    <section class="bootcamps" id="bootcamps">
+      <h2 class="section-title">Bootcamps</h2>
+      <p>Bootcamps are intensive full-time programs. There are several in our area.</p>
+      <ul>
+        <li><%= link_to "General Assembly", "https://generalassemb.ly/boston" %></li>
+        <li><%= link_to "Launch Academy", "http://www.launchacademy.com/" %></li>
+        <li><%= link_to "Startup Institute", "http://startupinstitute.com/boston" %></li>
+      </ul>
+    </section>
+
+    <section class="online-classes" id="online-classes">
+      <h2 class="section-title">Online classes</h2>
+      <ul>
+        <li><%= link_to "thoughtbot Upcase", "http://upcase.com/" %></li>
+        <li><%= link_to "Thinkful", "http://thinkful.com/" %></li>
+        <li><%= link_to "Pragmatic Programmers video series", "http://pragmaticstudio.com/ruby" %></li>
+        <li><%= link_to "Firehose Weekend Virtual Classes", "http://www.firehoseweekend.com/" %></li>
+      </ul>
+    </section>
+  </div>
+</main>

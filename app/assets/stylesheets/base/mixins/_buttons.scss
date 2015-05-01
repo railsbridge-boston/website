@@ -1,0 +1,11 @@
+@mixin button-callout($color) {
+  @extend %button;
+  background-color: $color;
+  border-bottom-color: darken($color, 8);
+
+  &:hover {
+    background-color: $orange;
+    border-bottom-color: transparent;
+  }
+}
+

@@ -1,0 +1,71 @@
+html, body {
+  @include size(100%);
+}
+
+main {
+  @include outer-container;
+  padding: 0 $side-padding;
+}
+
+section {
+  padding: 3em 0;
+}
+
+footer {
+  @include outer-container;
+  border-top: $light-border;
+  margin-top: 2em;
+  padding: 2em $side-padding;
+
+  @include media($large-screen) {
+    padding: 2em 0;
+  }
+
+  a {
+    color: darken($gray-light, 20);
+
+    &:hover {
+      color: $orange;
+    }
+  }
+
+  p {
+    color: darken($gray-light, 15);
+    font-family: $sans-serif;
+    margin-bottom: 0.5em;
+
+    @include media($medium-screen) {
+      &:first-of-type {
+        float: left;
+      }
+
+      &:last-of-type {
+        float: right;
+      }
+    }
+  }
+}
+
+.button {
+  @extend %button;
+}
+
+.caption {
+  color: darken($gray-light, 25);
+  font-size: $small-font-size;
+
+  a {
+    color: darken($gray-light, 35);
+
+    &:hover {
+      color: $gray;
+    }
+  }
+}
+
+.section-title {
+  color: $blue;
+  font-weight: $thin-font-weight;
+  margin-bottom: 1em;
+  text-transform: uppercase;
+}
