@@ -15,9 +15,6 @@ if [ ! -f .env ]; then
   cp .sample.env .env
 fi
 
-# Set up database and add any development seed data
-bundle exec rake db:setup dev:prime
-
 # Add binstubs to PATH via export PATH=".git/safe/../../bin:$PATH" in ~/.zshenv
 mkdir -p .git/safe
 

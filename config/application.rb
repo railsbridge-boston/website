@@ -4,7 +4,6 @@ require "rails"
 # Pick the frameworks you want:
 require "active_model/railtie"
 require "active_job/railtie"
-require "active_record/railtie"
 require "action_controller/railtie"
 require "action_view/railtie"
 require "sprockets/railtie"
@@ -31,8 +30,5 @@ module RailsbridgebostonDotOrg
     config.autoload_paths += %W(#{config.root}/lib)
 
     config.action_controller.action_on_unpermitted_parameters = :raise
-
-    # Do not swallow errors in after_commit/after_rollback callbacks.
-    config.active_record.raise_in_transactional_callbacks = true
   end
 end
