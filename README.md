@@ -20,6 +20,17 @@ Running the app locally
     $ middleman
     $ open http://localhost:4567
 
+Hiding registration
+-------------------
+
+Sometimes we create an event, make it live, but don't want people to sign up
+yet. In that case we can set `ENV["HIDE_REGISTRATION]` to `"true"` on Heroku,
+and the registration link won't be shown at all:
+
+    heroku config:set HIDE_REGISTRATION=true
+
+Don't forget to un-hide it!
+
 Using real event data
 ---------------------
 

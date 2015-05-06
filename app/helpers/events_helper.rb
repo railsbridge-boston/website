@@ -7,6 +7,10 @@ module EventsHelper
     next_event.venue
   end
 
+  def show_registration?
+    ENV["HIDE_REGISTRATION"] != "true"
+  end
+
   private
 
   def event_manager
