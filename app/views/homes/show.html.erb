@@ -20,17 +20,7 @@
 </section>
 
 <% if show_registration? %>
-  <section class="upcoming">
-    <iframe src=<%= venue_map_url %> width="300" height="225" frameborder="0" style="border:0"></iframe>
-    <div class="workshop">
-      <h2 class="section-title"><%= next_event.dates %></h2>
-      <p><%= next_event_venue.name %></p>
-      <p><%= next_event_venue.address %></p>
-      <% if next_event.url %>
-        <%= link_to "Register for workshop", next_event.url, class: "register-link button", target: "_blank" %>
-      <% end %>
-    </div>
-  </section>
+  <%= render "registration" %>
 <% end %>
 
 <section class="mailing-list">
