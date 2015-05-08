@@ -19,7 +19,6 @@ gem "rack-contrib"
 gem "rails", "4.2.1"
 gem "refills"
 gem "sass-rails", "~> 5.0"
-gem "simple_form"
 gem "uglifier"
 gem "unicorn"
 
