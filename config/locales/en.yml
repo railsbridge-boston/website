@@ -15,5 +15,9 @@ en:
       short:
         "%B %d"
 
+
+  homes:
+    show:
+      register_for_workshop: Register for the workshop
   titles:
     application: RailsBridge Boston

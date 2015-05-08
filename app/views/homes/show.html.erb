@@ -12,8 +12,8 @@
     <%= image_tag "train.svg", class: "railsbridge" %>
 
     <h1 class="title">RailsBridge <span>Boston</span></h1>
-    <% if next_event.url %>
-      <%= link_to "Register for the workshop", next_event.url,
+    <% if show_registration? && next_event.url %>
+      <%= link_to t(".register_for_workshop"), next_event.url,
         class: "register-link", target: "_blank" %>
     <% end %>
   </div>

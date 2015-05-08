@@ -8,6 +8,7 @@ feature "Hiding registration" do
       visit root_path
 
       expect(page).to have_content "Cool Venue"
+      expect(page).to have_content t("homes.show.register_for_workshop")
     end
   end
 
@@ -24,6 +25,7 @@ feature "Hiding registration" do
       visit root_path
 
       expect(page).not_to have_content "Cool Venue"
+      expect(page).not_to have_content t("homes.show.register_for_workshop")
     end
   end
 
