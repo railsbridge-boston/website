@@ -1,6 +1,6 @@
 module ApplicationHelper
   def mailchimp_form_url
-    "//railsbridgeboston.us6.list-manage.com/subscribe/post?u=1b4272afae4569dec6efb74bb&amp;id=1ec91857a1"
+    "//railsbridgeboston.us6.list-manage.com/subscribe/post?u=1b4272afae4569dec6efb74bb&id=1ec91857a1"
   end
 
   def venue_map_url
