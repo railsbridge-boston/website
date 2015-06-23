@@ -22,7 +22,7 @@ class Eventbrite
     end
 
     def venue
-      Eventbrite::Venue.new(details["venue"])
+      Eventbrite::Venue.new(venue_details)
     end
 
     private
@@ -35,6 +35,10 @@ class Eventbrite
 
     def end_date
       details["end"]["local"]
+    end
+
+    def venue_details
+      details["venue"] ||= {}
     end
   end
 end

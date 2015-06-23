@@ -20,5 +20,18 @@ describe Eventbrite::Event do
       event = Eventbrite::Event.new(details)
       expect(event.venue).to be_an(Eventbrite::Venue)
     end
+
+    context "when there is no venue" do
+      it "creates an Eventbrite::Venue with an empty hash" do
+        venue = double(:venue)
+        allow(Eventbrite::Venue).to receive(:new).and_return(venue)
+        details = { "title" => "Event with no venue" }
+
+        event = Eventbrite::Event.new(details)
+
+        expect(event.venue).to eq(venue)
+        expect(Eventbrite::Venue).to have_received(:new).with({})
+      end
+    end
   end
 end
