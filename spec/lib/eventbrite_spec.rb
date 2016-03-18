@@ -5,7 +5,9 @@ require "eventbrite"
 
 describe Eventbrite do
   around do |example|
-    ClimateControl.modify EVENTBRITE_ACCESS_TOKEN: "bar" do
+    env_variables = { EVENTBRITE_ACCESS_TOKEN: "bar", NEXT_EVENT_ID: "123" }
+
+    ClimateControl.modify env_variables do
       example.run
     end
   end
@@ -33,7 +35,7 @@ describe Eventbrite do
     end
 
     def stub_successful_eventbrite_request
-      events = { events: [{ "title" => "event info" }] }
+      events = { "name" => { "text" => "event info" } }
 
       stub_request(:get, eventbrite_api_url).
         to_return(
