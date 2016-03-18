@@ -1,4 +1,4 @@
-class Eventbrite
+module Eventbrite
   class Venue
     def initialize(details)
       @details = details

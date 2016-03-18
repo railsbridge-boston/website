@@ -1,6 +1,6 @@
 module EventsHelper
   def next_event
-    event_manager.upcoming_event
+    @next_event ||= Eventbrite::EventFinder.find(ENV.fetch("NEXT_EVENT_ID"))
   end
 
   def next_event_venue
@@ -9,11 +9,5 @@ module EventsHelper
 
   def show_registration?
     ENV["HIDE_REGISTRATION"] != "true"
-  end
-
-  private
-
-  def event_manager
-    @event_manager ||= Eventbrite.new
   end
 end

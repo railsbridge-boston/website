@@ -1,6 +1,4 @@
-require_relative "venue"
-
-class Eventbrite
+module Eventbrite
   class Event
     def initialize(details)
       @details = details

@@ -1,4 +1,4 @@
-class Eventbrite
+module Eventbrite
   class NullEvent
     def title
       nil

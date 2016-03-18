@@ -3,12 +3,14 @@ require "rails_helper"
 feature "Hiding registration" do
   context "when registration is not hidden" do
     scenario "live events show up" do
-      stub_upcoming_event("Cool Venue")
+      ClimateControl.modify NEXT_EVENT_ID: "supersecret" do
+        stub_upcoming_event("Cool Venue")
 
-      visit root_path
+        visit root_path
 
-      expect(page).to have_content "Cool Venue"
-      expect(page).to have_content t("homes.show.register_for_workshop")
+        expect(page).to have_content "Cool Venue"
+        expect(page).to have_content t("homes.show.register_for_workshop")
+      end
     end
   end
 
@@ -38,8 +40,6 @@ feature "Hiding registration" do
       "venue" => { "name" => venue_name },
     )
 
-    event_brite = double(upcoming_event: upcoming_event)
-
-    allow(Eventbrite).to receive(:new).and_return(event_brite)
+    allow(Eventbrite::EventFinder).to receive(:find).and_return(upcoming_event)
   end
 end
