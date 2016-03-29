@@ -1,3 +1,5 @@
+require "ostruct"
+
 module Eventbrite
   class NullEvent
     def title

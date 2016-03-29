@@ -1,8 +1,6 @@
+require "spec_helper"
 require "climate_control"
-require "json"
-require "webmock/rspec"
 require "eventbrite/event_finder"
-require "eventbrite/event"
 
 describe Eventbrite::EventFinder do
   around do |example|

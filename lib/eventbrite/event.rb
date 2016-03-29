@@ -1,3 +1,5 @@
+require "eventbrite/venue"
+
 module Eventbrite
   class Event
     def initialize(details)

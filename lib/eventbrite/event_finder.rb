@@ -1,4 +1,5 @@
 require "eventbrite/finder"
+require "eventbrite/event"
 require "eventbrite/null_event"
 
 module Eventbrite

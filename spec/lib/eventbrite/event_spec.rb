@@ -1,5 +1,4 @@
 require "eventbrite/event"
-require "eventbrite/venue"
 
 describe Eventbrite::Event do
   describe "#dates" do
