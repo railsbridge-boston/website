@@ -5,7 +5,7 @@ module Eventbrite
     end
 
     def name
-      details["name"] ||= "Location TBD"
+      details["name"] ||= ""
     end
 
     def address

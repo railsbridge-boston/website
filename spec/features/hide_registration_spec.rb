@@ -37,9 +37,11 @@ feature "Hiding registration" do
       "url" => "http://example.com",
       "start" => { "local" => "2014-09-19" },
       "end" => { "local" => "2014-09-20" },
-      "venue" => { "name" => venue_name },
+      "venue_id" => "123",
     )
+    venue = Eventbrite::Venue.new("name" => venue_name)
 
     allow(Eventbrite::EventFinder).to receive(:find).and_return(upcoming_event)
+    allow(Eventbrite::VenueFinder).to receive(:find).and_return(venue)
   end
 end

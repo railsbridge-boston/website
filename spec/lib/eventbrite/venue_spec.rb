@@ -9,10 +9,10 @@ describe Eventbrite::Venue do
     end
 
     context "when there is no venue name" do
-      it "returns 'Location TBD'" do
+      it "returns an empty string" do
         details = { "name" => nil }
         venue = Eventbrite::Venue.new(details)
-        expect(venue.name).to eq("Location TBD")
+        expect(venue.name).to be_empty
       end
     end
   end

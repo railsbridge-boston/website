@@ -1,4 +1,4 @@
-require "eventbrite/venue"
+require "eventbrite/venue_finder"
 
 module Eventbrite
   class Event
@@ -22,7 +22,7 @@ module Eventbrite
     end
 
     def venue
-      Eventbrite::Venue.new(venue_details)
+      @venue ||= Eventbrite::VenueFinder.find(venue_id)
     end
 
     private
@@ -37,8 +37,8 @@ module Eventbrite
       details["end"]["local"]
     end
 
-    def venue_details
-      details["venue"] ||= {}
+    def venue_id
+      details["venue_id"] ||= ""
     end
   end
 end

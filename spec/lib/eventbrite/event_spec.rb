@@ -14,23 +14,15 @@ describe Eventbrite::Event do
   end
 
   describe "#venue" do
-    it "returns the venue of the event" do
-      details = { "venue" => "some event info" }
+    it "finds the venue based on the venue id" do
+      venue = double(:venue)
+      allow(Eventbrite::VenueFinder).to receive(:find).and_return(venue)
+      details = { "title" => "Event with no venue" }
+
       event = Eventbrite::Event.new(details)
-      expect(event.venue).to be_an(Eventbrite::Venue)
-    end
 
-    context "when there is no venue" do
-      it "creates an Eventbrite::Venue with an empty hash" do
-        venue = double(:venue)
-        allow(Eventbrite::Venue).to receive(:new).and_return(venue)
-        details = { "title" => "Event with no venue" }
-
-        event = Eventbrite::Event.new(details)
-
-        expect(event.venue).to eq(venue)
-        expect(Eventbrite::Venue).to have_received(:new).with({})
-      end
+      expect(event.venue).to eq(venue)
+      expect(Eventbrite::VenueFinder).to have_received(:find).with("")
     end
   end
 end
