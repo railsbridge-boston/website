@@ -1,8 +1,11 @@
 require "spec_helper"
 require "climate_control"
 require "eventbrite/venue_finder"
+require "support/eventbrite_helpers"
 
 describe Eventbrite::VenueFinder do
+  include EventbriteHelpers
+
   around do |example|
     env_variables = { EVENTBRITE_ACCESS_TOKEN: "bar", }
 
@@ -16,7 +19,11 @@ describe Eventbrite::VenueFinder do
       it "returns an venue object" do
         allow(Eventbrite::Venue).to receive(:new)
         venue_body = { "name" => "Coolest Place" }
-        stub_eventbrite_response(body: venue_body, status: 200)
+        stub_eventbrite_response(
+          endpoint: "venue",
+          body: venue_body,
+          status: 200
+        )
 
         Eventbrite::VenueFinder.find("123")
 
@@ -26,24 +33,16 @@ describe Eventbrite::VenueFinder do
 
     context "when there's a bad response" do
       it "returns a placeholder venue" do
-        stub_eventbrite_response(body: { id: "123" }, status: 500)
+        stub_eventbrite_response(
+          endpoint: "venue",
+          body: { id: "123" },
+          status: 500
+        )
 
         venue = Eventbrite::VenueFinder.find("123")
 
         expect(venue).to be_an(Eventbrite::NullVenue)
       end
-    end
-
-    def stub_eventbrite_response(body:, status:)
-      stub_request(:get, eventbrite_api_url).to_return(
-        headers: { "Content-Type" => "application/json" },
-        body: body.to_json,
-        status: status
-      )
-    end
-
-    def eventbrite_api_url
-      /eventbriteapi.com/
     end
   end
 end
