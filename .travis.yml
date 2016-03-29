@@ -19,3 +19,8 @@ rvm:
 addons:
   postgresql: "9.3"
 sudo: false
+deploy:
+  provider: heroku
+  api_key:
+    secure: WmB1thnYD6EsqLkWB4t580YDzHL/tkLOBFkBckkaoLKMouv95JY7scK9snSNF4XMJPAk9h3yrx0MBC3GK1trvoxAfQjwF3bw8AKtFFPUjAf4iuJPp1pcz6b7uYu39kQlDPXWDNfLq7nzCaW8meKGyDgTjpsLA0qvVACj0STkmXg=
+  app: railsbridge-boston-staging
