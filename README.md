@@ -17,8 +17,8 @@ Running the app locally
 ----------------------
 
     $ ./bin/setup
-    $ middleman
-    $ open http://localhost:4567
+    $ heroku local
+    $ open http://localhost:5000
 
 Hiding registration
 -------------------
