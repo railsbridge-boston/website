@@ -8,8 +8,8 @@ This is the website for RailsBridge Boston, a chapter of [RailsBridge]. You can
 check out the site at <http://www.railsbridgeboston.org>. This does *not*
 include any curriculum content.
 
-RailsBridge Boston organizes workshops for women and their friends to learn
-Ruby, Rails, and other web technologies.
+RailsBridge Boston organizes workshops for people in underrepresented groups and
+their friends to learn Ruby, Rails, and other web technologies.
 
 [RailsBridge]: http://www.railsbridge.org
 
