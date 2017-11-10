@@ -1,9 +1,4 @@
 contacts:
-- googlegroup:
-  type: "googlegroup"
-  title: "Alumni Google Group"
-  url: "https://groups.google.com/forum/?fromgroups#!forum/railsbridge-boston-alumni"
-  description: "If you graduated from or volunteered at one of our workshops, join our"
 - github:
   type: "github"
   title: "Github"
