@@ -79,7 +79,7 @@ GEM
       thread
       thread_safe
     erubis (2.7.0)
-    execjs (2.5.2)
+    execjs (2.7.0)
     flutie (2.0.0)
     globalid (0.4.1)
       activesupport (>= 4.2.0)
@@ -208,9 +208,8 @@ GEM
     tins (1.5.1)
     tzinfo (1.2.5)
       thread_safe (~> 0.1)
-    uglifier (2.7.1)
-      execjs (>= 0.3.0)
-      json (>= 1.8.0)
+    uglifier (4.1.9)
+      execjs (>= 0.3.0, < 3)
     unicorn (4.9.0)
       kgio (~> 2.6)
       rack
