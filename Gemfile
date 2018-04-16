@@ -30,6 +30,7 @@ end
 
 group :development, :test do
   gem "awesome_print"
+  gem "bundler-audit"
   gem "byebug"
   gem "dotenv-rails"
   gem "pry-rails"
