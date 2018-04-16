@@ -5,13 +5,10 @@ ruby "2.3.1"
 gem "airbrake"
 gem "autoprefixer-rails"
 gem "bourbon", "~> 4.2.0"
-gem "coffee-rails", "~> 4.1.0"
-gem "email_validator"
 gem "flutie"
 gem "high_voltage"
 gem "httparty"
 gem "i18n-tasks"
-gem "jquery-middleman"
 gem "jquery-rails"
 gem "neat", "~> 1.7.0"
 gem "normalize-rails", "~> 3.0.0"
@@ -22,12 +19,6 @@ gem "refills"
 gem "sass-rails", "~> 5.0"
 gem "uglifier"
 gem "unicorn"
-
-group :development do
-  gem "spring"
-  gem "spring-commands-rspec"
-  gem "web-console"
-end
 
 group :development, :test do
   gem "awesome_print"
@@ -41,10 +32,7 @@ end
 group :test do
   gem "capybara-webkit", ">= 1.2.0"
   gem "climate_control"
-  gem "formulaic"
   gem "launchy"
-  gem "simplecov", require: false
-  gem "timecop"
   gem "webmock"
 end
 
