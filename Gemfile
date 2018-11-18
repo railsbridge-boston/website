@@ -8,7 +8,6 @@ gem "bourbon", "~> 4.2.0"
 gem "flutie"
 gem "high_voltage"
 gem "httparty"
-gem "i18n-tasks"
 gem "jquery-rails"
 gem "neat", "~> 1.7.0"
 gem "normalize-rails", "~> 3.0.0"
@@ -30,7 +29,7 @@ group :development, :test do
 end
 
 group :test do
-  gem "capybara-webkit", ">= 1.2.0"
+  gem "capybara"
   gem "climate_control"
   gem "launchy"
   gem "webmock"
