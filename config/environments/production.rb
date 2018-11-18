@@ -70,5 +70,3 @@ Rails.application.configure do
   # Use default logging formatter so that PID and timestamp are not suppressed.
   config.log_formatter = ::Logger::Formatter.new
 end
-
-Rack::Timeout.timeout = (ENV["RACK_TIMEOUT"] || 10).to_i
