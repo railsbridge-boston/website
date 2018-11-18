@@ -5,9 +5,6 @@ before_install:
   - sh -e /etc/init.d/xvfb start
 install:
   - bin/setup
-branches:
-  only:
-    - master
 cache:
   - bundler
 language:
