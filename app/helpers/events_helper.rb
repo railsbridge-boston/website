@@ -6,7 +6,7 @@ module EventsHelper
 
   def next_event_venue
     OpenStruct.new(name: ENV.fetch("VENUE_NAME"), address: ENV.fetch("VENUE_ADDRESS"))
-    @next_event.venue
+    # @next_event.venue
   end
 
   def show_registration?
