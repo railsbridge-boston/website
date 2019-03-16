@@ -1,5 +1,4 @@
 module EventsHelper
-  require 'pry'
   def next_event
     OpenStruct.new(
       venue: venue,
