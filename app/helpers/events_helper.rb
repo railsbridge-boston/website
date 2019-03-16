@@ -8,7 +8,6 @@ module EventsHelper
   end
 
   def next_event_venue
-
     next_event.venue
   end
 

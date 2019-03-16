@@ -1,10 +1,8 @@
 require "rails_helper"
-
 feature "Hiding registration" do
   context "when registration is not hidden" do
     scenario "live events show up" do
-      # ClimateControl.modify VENUE_MAP_URL: "example.com", NEXT_EVENT_ID: "supersecret" do
-      ClimateControl.modify VENUE_MAP_URL: "example.com" do
+      ClimateControl.modify VENUE_MAP_URL: "example.com", NEXT_EVENT_ID: "supersecret" do
   
       stub_upcoming_event("Cool Venue")
 
