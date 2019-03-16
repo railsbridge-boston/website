@@ -1,14 +1,12 @@
 require "rails_helper"
-
 feature "Hiding registration" do
+  let(:venue_name) { "Cool venue" }
   context "when registration is not hidden" do
     scenario "live events show up" do
-      ClimateControl.modify VENUE_MAP_URL: "example.com", NEXT_EVENT_ID: "supersecret" do
-        stub_upcoming_event("Cool Venue")
-
+      ClimateControl.modify VENUE_NAME: venue_name do
         visit root_path
 
-        expect(page).to have_content "Cool Venue"
+        expect(page).to have_content venue_name
         expect(page).to have_content t("homes.show.register_for_workshop")
       end
     end
@@ -16,32 +14,17 @@ feature "Hiding registration" do
 
   context "when registration is hidden because a live event isn't ready" do
     around do |example|
-      ClimateControl.modify HIDE_REGISTRATION: "true" do
+      ClimateControl.modify HIDE_REGISTRATION: "true", VENUE_NAME: venue_name do
         example.run
       end
     end
 
     scenario "the event does not show up" do
-      stub_upcoming_event("Cool Venue")
 
       visit root_path
 
-      expect(page).not_to have_content "Cool Venue"
+      expect(page).not_to have_content venue_name
       expect(page).not_to have_content t("homes.show.register_for_workshop")
     end
-  end
-
-  def stub_upcoming_event(venue_name)
-    upcoming_event = Eventbrite::Event.new(
-      "name" => { "text" => "Whatever" },
-      "url" => "http://example.com",
-      "start" => { "local" => "2014-09-19" },
-      "end" => { "local" => "2014-09-20" },
-      "venue_id" => "123",
-    )
-    venue = Eventbrite::Venue.new("name" => venue_name)
-
-    allow(Eventbrite::EventFinder).to receive(:find).and_return(upcoming_event)
-    allow(Eventbrite::VenueFinder).to receive(:find).and_return(venue)
   end
 end
