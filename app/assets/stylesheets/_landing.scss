@@ -215,10 +215,15 @@
     }
   }
 
-  #mc_embed_signup {
+  #ml_embed_signup {
     @include media($medium-screen) {
       @include shift(1 of 10);
       @include span-columns(5 of 10);
+    }
+
+    .input-group {
+      display: inline-block;
+      width: 45%;
     }
   }
 }
