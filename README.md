@@ -1,8 +1,7 @@
 RailsBridge Boston Website
 ==========================
 
-[![Build
-Status](https://travis-ci.org/railsbridge-boston/railsbridgeboston_dot_org.svg?branch=master)](https://travis-ci.org/railsbridge-boston/railsbridgeboston_dot_org)
+[![CI](https://github.com/railsbridge-boston/railsbridgeboston_dot_org/workflows/CI/badge.svg)](https://github.com/railsbridge-boston/railsbridgeboston_dot_org/actions?query=workflow%3ACI)
 
 This is the website for RailsBridge Boston, a chapter of [RailsBridge]. You can
 check out the site at <http://www.railsbridgeboston.org>. This does *not*
