@@ -148,7 +148,7 @@ GEM
       rake (>= 0.8.7)
       thor (>= 0.18.1, < 2.0)
     raindrops (0.19.0)
-    rake (11.3.0)
+    rake (12.3.3)
     rb-fsevent (0.10.3)
     rb-inotify (0.9.10)
       ffi (>= 0.5.0, < 2)
@@ -231,7 +231,7 @@ DEPENDENCIES
   rack-timeout
   rails (~> 4.2.11)
   rails_stdout_logging
-  rake (< 12.0)
+  rake (< 13.0)
   refills
   rspec-rails (~> 3.1.0)
   sass-rails (~> 5.0)
